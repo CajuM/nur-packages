@@ -8,14 +8,14 @@
 }:
 
 stdenv.mkDerivation rec {
-  pname   = "symbiflow-vtr";
-  version = "8.0.0.rc2-4003-g8980e4621";
+  pname   = "vtr";
+  version = "8.0.0-3340-g2dc5692e";
 
   src = fetchFromGitHub {
-    owner  = "SymbiFlow";
+    owner  = "verilog-to-routing";
     repo   = "vtr-verilog-to-routing";
-    rev    = "8980e46218542888fac879961b13aa7b0fba8432";
-    sha256 = "1sq7f1f3dzfm48a9vq5nvp0zllby0nasm3pvqab70f4jaq0m1aaa";
+    rev    = "2dc5692e30f5e2e44c0bd9e3787bf13d68cb4adf";
+    sha256 = "1rq7f1f3dzfm48a9vq5nvp0zllby0nasm3pvqab70f4jaq0m1aaa";
   };
 
   nativeBuildInputs = [

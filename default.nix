@@ -15,11 +15,10 @@ rec {
   prjxray-db = pkgs.callPackage ./pkgs/prjxray-db { };
   prjxray-tools = pkgs.callPackage ./pkgs/prjxray-tools { };
   symbiflow-arch-defs = pkgs.callPackage ./pkgs/symbiflow-arch-defs { };
-  symbiflow-vtr = pkgs.callPackage ./pkgs/symbiflow-vtr { };
-  symbiflow-yosys = pkgs.callPackage ./pkgs/symbiflow-yosys { };
+  vtr = pkgs.callPackage ./pkgs/vtr { };
 
-  symbiflow-yosys-plugins = pkgs.callPackage ./pkgs/symbiflow-yosys/plugins/symbiflow-yosys-plugins {
-    inherit symbiflow-yosys;
+  symbiflow-yosys-plugins = pkgs.callPackage ./pkgs/symbiflow-yosys-plugins {
+    inherit (pkgs) yosys;
   };
 
   python3Packages = pkgs.python3Packages // rec {

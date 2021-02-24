@@ -12,13 +12,13 @@
 
 buildPythonPackage rec {
   pname = "xc-fasm";
-  version = "0.0.1-g0ddd9516";
+  version = "0.0.1-ge12f3133";
 
   src = fetchFromGitHub {
     owner = "SymbiFlow";
     repo = "xc-fasm";
-    rev = "0ddd951602d47d5b95f2072f8aa751af5e81e577";
-    sha256 = "15bzw92sx99s0zldr48na4yhrnp7b90nxsd8ya6ag1pvvijp2al4";
+    rev = "e12f31334e96fedf3af86d13cf51f70ad2270f5f";
+    sha256 = "13bzw92sx99s0zldr48na4yhrnp7b90nxsd8ya6ag1pvvijp2al4";
   };
 
   propagatedBuildInputs = [

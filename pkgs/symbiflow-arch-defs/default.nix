@@ -1,7 +1,6 @@
 { stdenv
 , lib
 , fetchurl
-, autoPatchelfHook
 , python3Packages
 , archs ? [ "xc7a100t" "xc7a50t" "xc7z010" "xc7z020" ]
 }:

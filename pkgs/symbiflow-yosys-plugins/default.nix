@@ -1,25 +1,25 @@
 { stdenv
 , lib
 , fetchFromGitHub
-, symbiflow-yosys
+, yosys
 , zlib
 , readline
 }:
 
 stdenv.mkDerivation rec {
   pname   = "symbiflow-yosys-plugins";
-  version = "1.0.0.7-0060-g7454cd6b";
+  version = "1.0.0.7-248-ga604f9f2";
 
   src = fetchFromGitHub {
     owner  = "SymbiFlow";
     repo   = "yosys-symbiflow-plugins";
-    rev    = "7454cd6b5e4fd22854e2ada219a5e3c3a06e0717";
-    sha256 = "0r9r31p7fy4ylfrwvwlbivq5a03xrph34blxbxzx2c8bc02mbv0s";
+    rev    = "a604f9f2f1122beb06727dc7503c72d34839b91c";
+    sha256 = "0q9r31p7fy4ylfrwvwlbivq5a03xrph34blxbxzx2c8bc02mbv0s";
   };
 
   enableParallelBuilding = true;
 
-  nativeBuildInputs = [ symbiflow-yosys ];
+  nativeBuildInputs = [ yosys ];
 
   buildInputs = [
     readline
@@ -33,6 +33,5 @@ stdenv.mkDerivation rec {
     homepage    = "https://github.com/SymbiFlow/yosys-symbiflow-plugins";
     license     = licenses.isc;
     platforms   = platforms.all;
-    broken      = true;
   };
 }
