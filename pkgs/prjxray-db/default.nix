@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
     owner  = "SymbiFlow";
     repo   = "prjxray-db";
     rev    = "e7663ba6eb651a7255775c7dca4e32483a8cd9fb";
-    sha256 = "0q75xig16dbgh3nfygggir0a160x52y766h7hd9xcib9m88jixb2";
+    sha256 = "1w404xmmycs8y13bvqjax4g1y43jlx9dyras74r7n36mify2f7aq";
   };
 
   enableParallelBuilding = true;

@@ -15,7 +15,7 @@ stdenv.mkDerivation rec {
     owner  = "verilog-to-routing";
     repo   = "vtr-verilog-to-routing";
     rev    = "2dc5692e30f5e2e44c0bd9e3787bf13d68cb4adf";
-    sha256 = "1rq7f1f3dzfm48a9vq5nvp0zllby0nasm3pvqab70f4jaq0m1aaa";
+    sha256 = "0y4z33slxa30ayspic66jlysh6i3x0fzlrndlgqd32whd7qadnml";
   };
 
   nativeBuildInputs = [
@@ -29,8 +29,6 @@ stdenv.mkDerivation rec {
     "-DWITH_ODIN=OFF"
     "-DWITH_ABC=OFF"
   ];
-
-  doCheck = true;
 
   meta = with lib; {
     description = "SymbiFlow WIP changes for Verilog to Routing (VTR)";

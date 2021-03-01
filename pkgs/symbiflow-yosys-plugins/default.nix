@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
     owner  = "SymbiFlow";
     repo   = "yosys-symbiflow-plugins";
     rev    = "a604f9f2f1122beb06727dc7503c72d34839b91c";
-    sha256 = "0q9r31p7fy4ylfrwvwlbivq5a03xrph34blxbxzx2c8bc02mbv0s";
+    sha256 = "03gkma4inwpl609dzkfk6aqs12wvy1ssz8h5g8x8w745gxsj2995";
   };
 
   enableParallelBuilding = true;
@@ -25,6 +25,11 @@ stdenv.mkDerivation rec {
     readline
     zlib
   ];
+
+  patchPhase = ''
+    substituteInPlace xdc-plugin/xdc.cc \
+      --replace 'proc_share_dirname()' "std::string(\"$out/share/yosys\")"
+  '';
 
   makeFlags = [ "PLUGINS_DIR=$(out)/share/yosys/plugins" ];
 
