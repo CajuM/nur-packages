@@ -3,10 +3,10 @@
 , fetchFromGitHub
 , buildPythonPackage
 , pytestCheckHook
-, simplejson
 , intervaltree
 , python-prjxray
-, symbiflow-fasm
+, simplejson
+, fasm
 , textx
 }:
 
@@ -18,24 +18,18 @@ buildPythonPackage rec {
     owner = "SymbiFlow";
     repo = "xc-fasm";
     rev = "e12f31334e96fedf3af86d13cf51f70ad2270f5f";
-    sha256 = "13bzw92sx99s0zldr48na4yhrnp7b90nxsd8ya6ag1pvvijp2al4";
+    sha256 = "0cx3wp0l7pijj735jz4v07ijkdacws3c3aiafxnziyspmxaclghs";
   };
 
   propagatedBuildInputs = [
-    simplejson
+    fasm
     intervaltree
     python-prjxray
-    symbiflow-fasm
+    simplejson
     textx
   ];
 
-  # Pip will check for and then install missing dependecies.
-  # Because some of them are installed from git, it will try
-  # to download them even if they're present in
-  # propagatedBuildInputs.
-  pipInstallFlags = [ "--no-deps" ];
-
-  checkInputs = [ pytestCheckHook ];
+  doCheck = false;
 
   meta = with lib; {
     description = "XC FASM libraries";
